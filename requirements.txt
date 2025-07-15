@@ -1,0 +1,6 @@
+pyTelegramBotAPI
+python-dotenv
+together
+fpdf
+python-docx
+pypdf
