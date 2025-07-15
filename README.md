@@ -1,29 +1,28 @@
-# SmartSummarizerBot
+# 🤖 Smart Summarizer Bot
 
-**** is a Telegram chatbot designed to interact with users in multiple languages and intelligently process textual content using AI.
+An AI-powered Telegram bot that reads user input (text or files), summarizes it, translates it, or generates smart questions — all in six languages. Powered by the DeepSeek-V3 model via the Together API, this multilingual assistant brings natural interaction, document handling, and PDF export into one seamless chatbot experience.
 
 ---
 
 ## ✨ Features
 
 - 🧠 AI-powered responses (DeepSeek-V3 via Together API)
-- 📝 Supports plain text, PDFs, and Word documents
-- 🌍 Multilingual: English, Persian, Arabic, Spanish, French, Russian
-- 📌 Summarize, translate, or answer questions from text
-- 📤 Convert responses into downloadable PDF files
-- 📲 User-friendly interface with inline language selector
+- 📝 Accepts plain text, PDFs, and Word documents
+- 🌍 Multilingual support: English, Persian, Arabic, Spanish, French, Russian
+- 📌 Smart summarization, Q&A generation, and translation
+- 📤 Converts responses to downloadable PDF files
+- 📲 User-friendly interface with inline language selection
 
 ---
 
-## 📁 Project Structure
+## 📁 Project Files
 
 ### `main.py`
-- Core bot logic
-- Handles Telegram interactions via `telebot`
-- Manages user sessions and message types
-- Extracts text from `.pdf` and `.docx` files
-- Interfaces with AI model for dynamic responses
-- Generates PDFs from output (with language compatibility checks)
+- Core logic: handles Telegram API via `telebot`
+- Processes text and documents
+- Integrates AI API
+- Generates responses and PDF outputs
+- Manages language selection and session states
 
 ### `requirements.txt`
 Python dependencies:
@@ -35,49 +34,54 @@ Python dependencies:
 - `pypdf`
 
 ### `.env` (Not Included)
-Environment variables for secure configuration:
-- `BOT_TOKEN` (Telegram bot token)
+- Contains environment variables, e.g.:
+  - `BOT_TOKEN` (Telegram bot token)
 
-### `Files/`
-- Temporary runtime folder
-- Stores uploaded files and generated PDFs before cleanup
-
----
-
-## 🧩 Design Highlights
-
-- **Multilingual Support:**  
-  UI and content handling for six languages including RTL scripts. Users choose language via keyboard.
-
-- **AI Integration:**  
-  Smart prompt logic tailors responses by language and task (summary, Q&A, translation).
-
-- **Document Parsing:**  
-  PDF and DOCX support using `pypdf` and `python-docx` for robust text extraction.
-
-- **PDF Export Limitations:**  
-  Due to font constraints (e.g., FPDF + Helvetica), the bot informs users if RTL script PDF generation isn't supported.
-
-- **Security:**  
-  Secrets handled securely via `.env` and `python-dotenv`.
-
-- **UX:**  
-  Emoji-rich, friendly bot responses and intuitive language selection.
+### `Files/` (Runtime only)
+- Temporary folder to store:
+  - Uploaded files
+  - Generated PDFs
 
 ---
 
-## 🚀 Future Improvements
+## 🧩 Design Choices and Challenges
 
-- ✅ Advanced PDF rendering for RTL support (custom fonts)
-- ✅ Voice message + multimodal input support
-- ✅ Context-aware AI responses
-- ✅ Smarter file cleanup & storage management
+### Language Support
+- RTL support (Persian, Arabic) included
+- PDF generation currently limited to LTR languages due to font issues with FPDF
+- Bot gracefully handles unsupported cases with friendly messages
+
+### AI Integration
+- Together’s DeepSeek-V3 API used for efficient, dynamic responses
+- Prompts adapted based on input type and language
+
+### Document Handling
+- PDFs parsed with `pypdf`
+- Word docs parsed with `python-docx`
+- Clean error handling for file parsing issues
+
+### UX Focus
+- Language selection via inline keyboard
+- Emoji-enhanced responses for friendly tone
+- Always acknowledges user actions (feedback-first)
+
+### Security
+- Secrets like bot token loaded from `.env` using `python-dotenv`
+- No hardcoded credentials
+
+---
+
+## 🚀 Future Plans
+
+- 📝 Improve PDF rendering (RTL + font support)
+- 🎙 Add voice message processing
+- 🧠 Enable context-based AI replies
+- 💾 Optimize file storage/cleanup
 
 ---
 
 ## 📚 Summary
 
-AI Language Bot merges natural language processing, multilingual interaction, and file handling into a single Telegram bot. It showcases secure, scalable bot development with modern AI capabilities using Python.
+SmartSummarizerBot (AI Language Bot) is a real-world implementation of AI in messaging — blending natural language processing, file I/O, and multi-language support into an accessible Telegram interface. It prioritizes clean architecture, secure handling of data, and useful interaction design for global users.
 
-> Bridging language gaps and making content smarter—one message at a time. 🌍💬
-
+> Making content simpler, smarter, and multilingual — straight from your chat window. 🌐📄💬
