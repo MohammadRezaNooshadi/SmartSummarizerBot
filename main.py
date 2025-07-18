@@ -157,8 +157,10 @@ def docx(path):
     text = "\n".join([para.text for para in doc.paragraphs])
     return text
 
+
 def ltr_language(language):
     return language in ["English", "Spanish", "French", "Russian"]
+
 
 def make_pdf(id, text_dict):
     text = text_dict[id]
