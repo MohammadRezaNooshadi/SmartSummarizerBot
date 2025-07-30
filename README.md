@@ -71,15 +71,6 @@ Python dependencies:
 
 ---
 
-## 🚀 Future Plans
-
-- 📝 Improve PDF rendering (RTL + font support)
-- 🎙 Add voice message processing
-- 🧠 Enable context-based AI replies
-- 💾 Optimize file storage/cleanup
-
----
-
 ## 📚 Summary
 
 SmartSummarizerBot (AI Language Bot) is a real-world implementation of AI in messaging — blending natural language processing, file I/O, and multi-language support into an accessible Telegram interface. It prioritizes clean architecture, secure handling of data, and useful interaction design for global users.
