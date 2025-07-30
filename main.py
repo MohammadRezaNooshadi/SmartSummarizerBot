@@ -177,6 +177,7 @@ def make_pdf(id, text_dict):
     else:
         return file_path
 
+
 def prompt():
     return [
         """Translate and slightly rephrase the following message into the given language.
