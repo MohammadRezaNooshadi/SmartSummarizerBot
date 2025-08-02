@@ -1,4 +1,4 @@
-# 🤖 Smart Summarizer Bot
+# Summarify
 
 An AI-powered Telegram bot that reads user input (text or files), summarizes it, translates it, or generates smart questions — all in six languages. Powered by the DeepSeek-V3 model via the Together API, this multilingual assistant brings natural interaction, document handling, and PDF export into one seamless chatbot experience.
 
